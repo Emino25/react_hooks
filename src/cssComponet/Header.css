@@ -1,0 +1,11 @@
+.containe {
+    width: 100vw;
+    margin: 0;
+    margin-right: 0;
+    padding: 0;
+    background-color: #b2e0df;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
