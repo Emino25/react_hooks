@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
 import "../cssComponet/CardLayout.css"
 
 
 function CardLayout(props) {
+    let trailer = useNavigate();
     const existArray = props.data;
     const searchMovie= props.search;
     const rating = props.rate
@@ -18,9 +20,9 @@ function CardLayout(props) {
                     <p>
                     <Rating  ratingValue={value.rate} readonly={true}/* Available Props */ />
                     </p>
-                    <button>
+                    <button onClick={()=>{trailer(`/Desc/${value.id}`)}}>
                         <i class="fab fa-youtube"></i>
-                        Play trailer on YouTube
+                        Trailer
                     </button>
                 </div>
             </div>

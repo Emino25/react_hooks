@@ -42,7 +42,7 @@ function AddButton({HandleAdd}) {
   }
   const HandleSubmit = (e) => {
     e.preventDefault()
-    HandleAdd({...form,rating})
+    HandleAdd({...form,rate:rating})
     setForm({
       name:"",
       img:"",

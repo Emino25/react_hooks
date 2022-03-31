@@ -4,6 +4,8 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import {data} from './Data'
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Desc from "./Components/Desc";
 
 function App() {
   const [movie, setMovie] = useState(data)
@@ -18,7 +20,10 @@ function App() {
   return (
     <div className="App">
       <Header search={search} HandleSearch={HandleSearch} setRate={setRate} rate={rate}/>
-      <Body data={movie} HandleAdd={HandleAdd} search={search} rate={rate}/>
+      <Routes>
+        <Route path="/" element={<Body data={movie} HandleAdd={HandleAdd} search={search} rate={rate}/>}/>
+        <Route path="/Desc/:id" element={<Desc data={movie} />}/>
+      </Routes>
     </div>
   );
 }
